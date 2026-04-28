@@ -68,6 +68,13 @@ class SocketService {
     }
   }
 
+  // 🚨 SOS LISTENER
+  onSOSAlert(callback) {
+    if (this.socket) {
+      this.socket.on('SOS_ALERT', callback);
+    }
+  }
+
   // Remove listener
   off(event) {
     if (this.socket) {
